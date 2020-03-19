@@ -19,13 +19,14 @@ class Circle(Shapes2D):
 		within_Y_range = bool(y > self.center.y - self.r and y < self.center.y + self.r)
 		if within_X_range and within_Y_range:
 			return True
+		else:
+			return False
 
 	def is_point_on_shape(self, x, y):
 		top = bool(y == self.center.y + self.r and x == self.center.x)
 		right = bool(x == self.center.x + self.r and y == self.center.y)
 		bottom = bool(y == self.center.y - self.r and x == self.center.x)
 		left = bool(x == self.center.x - self.r and y == self.center.y)
-
 		if top or bottom or right or left:
 			return True
 
